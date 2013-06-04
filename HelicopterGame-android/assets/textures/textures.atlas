@@ -1,0 +1,68 @@
+
+textures.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+helicopter1
+  rotate: false
+  xy: 1, 323
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter2
+  rotate: false
+  xy: 1, 193
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter3
+  rotate: false
+  xy: 259, 323
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter4
+  rotate: false
+  xy: 1, 63
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter5
+  rotate: false
+  xy: 259, 193
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter6
+  rotate: false
+  xy: 517, 323
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+helicopter7
+  rotate: false
+  xy: 259, 63
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+wall
+  rotate: false
+  xy: 517, 1
+  size: 48, 320
+  orig: 48, 320
+  offset: 0, 0
+  index: -1
+floatwall
+  rotate: false
+  xy: 775, 355
+  size: 48, 96
+  orig: 48, 96
+  offset: 0, 0
+  index: -1
