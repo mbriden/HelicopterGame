@@ -1,2 +1,0 @@
-cd E:\Programmering\Eclipse workspace\libgdx-nightly-latest
-java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 "E:\Programmering\Eclipse workspace\HelicopterGame\HelicopterGame-android\assets\textures-original" "E:\Programmering\Eclipse workspace\HelicopterGame\HelicopterGame-android\assets\textures" "textures"
