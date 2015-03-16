@@ -49,7 +49,7 @@ public class GameScreen implements Screen {
 		world.setSystem(new DistanceSystem());
 		cameraSystem 			= 	world.setSystem(new CameraSystem(camera), true);
 		interpolationSystem 	= 	world.setSystem(new InterpolationSystem(), true);
-		simulationSystem 		= 	world.setSystem(new SimulationSystem(0.0f, 0.0f));
+		simulationSystem 		= 	world.setSystem(new SimulationSystem(0.0f, -17.0f));
 		spriteRenderSystem 		= 	world.setSystem(new SpriteRenderSystem(camera), true);
 		hudRenderSystem 		= 	world.setSystem(new HudRenderSystem(new OrthographicCamera(HelicopterGame.FRAME_WIDTH, HelicopterGame.FRAME_HEIGHT)), true);
 		animationRenderSystem 	=	world.setSystem(new AnimationRenderSystem(camera), true);

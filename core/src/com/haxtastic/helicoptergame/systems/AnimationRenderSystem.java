@@ -15,7 +15,6 @@ import com.artemis.utils.Bag;
 import com.artemis.utils.ImmutableBag;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -25,7 +24,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.haxtastic.helicoptergame.Constants;
 import com.haxtastic.helicoptergame.components.AnimationSprite;
 import com.haxtastic.helicoptergame.components.Position;
-import com.haxtastic.helicoptergame.components.Sprite;
 
 public class AnimationRenderSystem extends EntitySystem {
 	@Mapper
@@ -39,8 +37,6 @@ public class AnimationRenderSystem extends EntitySystem {
 	private SpriteBatch batch;
 	private OrthographicCamera camera;
 	
-	private float stateTime;
-
 	private Bag<AtlasRegion> regionsByEntity;
 	private List<Entity> sortedEntities;
 	
@@ -137,7 +133,6 @@ public class AnimationRenderSystem extends EntitySystem {
 	}
 	
 	public void addTime(float t){
-		stateTime += t;
 	}
 
 	@Override

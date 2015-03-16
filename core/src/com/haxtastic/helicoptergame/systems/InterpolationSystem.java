@@ -5,9 +5,7 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
-import com.haxtastic.helicoptergame.Constants;
 import com.haxtastic.helicoptergame.components.AnimationSprite;
-import com.haxtastic.helicoptergame.components.Player;
 import com.haxtastic.helicoptergame.components.Position;
 import com.haxtastic.helicoptergame.components.Sprite;
 

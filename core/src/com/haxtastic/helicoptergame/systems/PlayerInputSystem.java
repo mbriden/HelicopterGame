@@ -9,13 +9,11 @@ import com.artemis.systems.EntityProcessingSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.haxtastic.helicoptergame.Constants;
 import com.haxtastic.helicoptergame.components.Actor;
 import com.haxtastic.helicoptergame.components.AnimationSprite;
-import com.haxtastic.helicoptergame.components.Distance;
 import com.haxtastic.helicoptergame.components.Player;
 import com.haxtastic.helicoptergame.components.Position;
 import com.haxtastic.helicoptergame.components.Velocity;
@@ -28,7 +26,7 @@ public class PlayerInputSystem extends EntityProcessingSystem implements InputPr
 	@Mapper ComponentMapper<Player> plm;
 	@Mapper ComponentMapper<AnimationSprite> sm;
 	
-	private boolean jump, jumpPress, startPress, restartPress = false;
+	private boolean jump, startPress, restartPress = false;
 	public float time, pressTime = 0;
 	//private float time, prevTime, resetTime;
 	
@@ -55,26 +53,27 @@ public class PlayerInputSystem extends EntityProcessingSystem implements InputPr
 		time += world.delta;
 		
 		float yVel = 0;
-		velocity.x = 6.0f;
+		velocity.x = 6.5f;
 		yVel = actor.getLinearVelocity().y;
-		Gdx.app.log("yVel", String.valueOf(yVel));
+		//Gdx.app.log("yVel", String.valueOf(yVel));
+		actor.setLinearVelocity(velocity.x, yVel);
 		if(startPress && player.alive){
 			player.started = true;
 			startPress = false;
 			jump = true;
 			sprite.active = true;
-			yVel = 0f;
+			//yVel = 0f;
 		}else if(restartPress){
 			player.restart = true;
 			restartPress = false;
 		}else if(jump && player.alive){
-			yVel = Math.max(yVel+0.2f, 0f);
-		}else if(player.alive) {
-			yVel = Math.min(yVel-0.2f, -1.5f);
-		}
+			velocity.y += 0.35f;
+		}//else if(player.alive) {
+		//	yVel = Math.min(yVel-0.2f, -1.5f);
+		//}
 		if(!player.alive)
 			jump = false;
-		actor.setLinearVelocity(velocity.x, yVel);
+		//actor.setLinearVelocity(velocity.x, yVel);
 		/*if(time - pressTime > 5 && jumpPress){
 			Preferences prefs = Gdx.app.getPreferences("flygaviltspelet");
 			prefs.putFloat("best", 0.0f);
@@ -127,7 +126,6 @@ public class PlayerInputSystem extends EntityProcessingSystem implements InputPr
 		if(player.started && player.alive){
 			jump = true;
 			pressTime = time;
-			jumpPress = true;
 		}
 		else if(!player.started && player.alive){
 			startPress = true;
@@ -143,14 +141,11 @@ public class PlayerInputSystem extends EntityProcessingSystem implements InputPr
 		if(player.started && player.alive){
 			jump = false;
 			pressTime = 0;
-			jumpPress = false;
 		}
 		else if(!player.started && player.alive){
 			startPress = false;
-			jumpPress = false;
 		}else{
 			restartPress = false;
-			jumpPress = false;
 		}
 		return true;
 	}
